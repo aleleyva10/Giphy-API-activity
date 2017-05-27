@@ -13,9 +13,16 @@ function onReady() {
       searchURL += $('#userInput').val();
       searchURL += '&api_key=dc6zaTOxFJmzC';
 
+      function addFavorites() {
+        console.log('inside add to favorites');
+
+
+
+      }
+
       $.ajax({
-        url: searchURL,
         type: 'GET',
+        url: searchURL,
         success: function(response) {
           console.log(response);
           if (response.data.length === 0) {
@@ -41,6 +48,12 @@ function onReady() {
   $(document).on('click', '.favBtn', function() {
     $(this).parent().appendTo('.favorites');
     $(this).remove();
+  });
+  $(document).on('click', '#showFavBtn', function() {
+    $(this).parent().appendTo('.favorites');
+    $('.inputs').hide();
+    $('.container').hide();
+
 
   });
 } // end of onReady
