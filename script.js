@@ -16,8 +16,6 @@ function onReady() {
       function addFavorites() {
         console.log('inside add to favorites');
 
-
-
       }
 
       $.ajax({
